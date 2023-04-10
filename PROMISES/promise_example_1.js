@@ -1,8 +1,7 @@
 //Example 1 of how to declare a Promise object
 
-let num = 1;
-
 const myFunction = (resolve, reject) => {
+  let num = 1;
     if(num > 0){
         resolve('Promise resolved!');
     }else{
@@ -11,7 +10,13 @@ const myFunction = (resolve, reject) => {
 
 };
 
-const myPromise = new Promise (myFunction);
+//const myPromise = new Promise (myFunction);
+
+myFunction.then((message) => {
+  console.log('Resolve message is: ' + message);
+}).catch((message) => {
+  console.log('Reject message is: ' + message);
+});
 
 //Example 2 of how to use a Promise object
 
